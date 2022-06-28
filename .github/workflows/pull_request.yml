@@ -28,16 +28,11 @@ jobs:
       - name: remove YB cache
         run: |
           rm -rf ~/.cache/yourbase
-      - name: Unit tests without YB
-        env:
-         YOURBASE_DISABLE: true
-        run: |
-         py.test tests
-      - name: Unit tests with YB in observation mode
+      - name: Unit tests with YB in non-observation mode
         env:
          YOURBASE_TELEMETRY: false
          YOURBASE_DISABLE: false
-         YOURBASE_OBSERVATION_MODE: true
+         YOURBASE_OBSERVATION_MODE: false
         run: |
           py.test tests
           
