@@ -32,11 +32,19 @@ jobs:
         env:
          YOURBASE_DISABLE: true
         run: |
-         py.test tests/unit_tests
+         py.test tests
       - name: Unit tests with YB in non-observation mode
         env:
          YOURBASE_TELEMETRY: false
          YOURBASE_DISABLE: false
+         YOURBASE_OBSERVATION_MODE: false
         run: |
-          py.test tests/unit_tests
+          py.test tests
+      - name: Unit tests with YB in observation mode
+        env:
+         YOURBASE_TELEMETRY: false
+         YOURBASE_DISABLE: false
+         YOURBASE_OBSERVATION_MODE: true
+        run: |
+          py.test tests
           
