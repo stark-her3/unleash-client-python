@@ -25,6 +25,7 @@ def test_feature_variants():
 
 def test_create_feature_true(test_feature):
     my_feature = test_feature
+    print(“Checking YourBase Test Acceleration after a code-change...”)
 
     CONTEXT["remoteAddress"] = "69.208.0.1"
     assert my_feature.is_enabled(CONTEXT)
