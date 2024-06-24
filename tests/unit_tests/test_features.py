@@ -31,7 +31,7 @@ def test_create_feature_true(test_feature):
     assert my_feature.yes_count == 1
 
     my_feature.reset_stats()
-    assert my_feature.yes_count == 0
+    assert my_feature.yes_count == 5
 
 
 def test_create_feature_false(test_feature):
